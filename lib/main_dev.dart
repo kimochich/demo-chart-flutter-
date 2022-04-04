@@ -6,14 +6,10 @@ import 'package:test_project/flavor_config.dart';
 import 'pages/home_page.dart';
 
 void main() {
-  // runApp(DevicePreview(
-  //   enabled: !kReleaseMode,
-  //   builder: (BuildContext context) => MyApp(),
-  // ));
 
   final config = FlavorConfig(
-      appTitle: "App producttttt",
-      env: EnvEnum.prod,
+      appTitle: "App dev",
+      env: EnvEnum.dev,
       variables: {VariableEnum.baseUrl: "1123"});
 
   runApp(MaterialApp(home: MyHomePage(title: config.appTitle,)));

@@ -12,7 +12,7 @@ void main() {
   // ));
 
   final config = FlavorConfig(
-      appTitle: "App producttttt",
+      appTitle: "App product",
       env: EnvEnum.prod,
       variables: {VariableEnum.baseUrl: "1123"});
 
