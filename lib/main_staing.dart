@@ -6,23 +6,21 @@ import 'package:test_project/flavor_config.dart';
 
 import 'pages/home_page.dart';
 
-void main() async {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-
   // runApp(DevicePreview(
   //   enabled: !kReleaseMode,
   //   builder: (BuildContext context) => MyApp(),
   // ));
 
-  final flavorString =
-      await const MethodChannel("flavor").invokeMethod<String>("getFlavor");
+  final config = FlavorConfig(
+      appTitle: "App staging",
+      env: EnvEnum.prod,
+      variables: {VariableEnum.baseUrl: "1123"});
 
-  if (kDebugMode) {
-    print("flavor string $flavorString");
-  }
+  final flavorString = await  const MethodChannel("flavor").invokeMethod<String>("getFlavor");
+  print("flavor string $flavorString");
 
-  runApp(MaterialApp(
-      home: MyHomePage(
-    title: flavorString ?? "Null",
-  )));
+
+  runApp(MaterialApp(home: MyHomePage(title: config.appTitle,)));
 }

@@ -15,7 +15,7 @@ import Flutter
          channel.setMethodCallHandler { (call, result) in
              // Note: this method is invoked on the UI thread
              // Handle battery messages.
-             let flavor = Bundle.main.infoDictionary?["Flavor"]
+             let flavor = Bundle.main.infoDictionary?["App - Flavor"]
              result(flavor)
          }
       
