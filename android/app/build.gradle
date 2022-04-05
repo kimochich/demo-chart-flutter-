@@ -57,15 +57,17 @@ android {
     productFlavors {
         prod {
             dimension "app"
-            applicationId "com.example.test_project.prod"
+            applicationId "com.example.test_project"
             versionCode flutterVersionCode.toInteger()
             versionName flutterVersionName
+            resValue "string", "app_name", "Project"
         }
         dev {
             dimension "app"
             applicationId "com.example.test_project.dev"
             versionCode flutterVersionCode.toInteger()
             versionName flutterVersionName
+            resValue "string", "app_name", "Project dev"
         }
     }
 
